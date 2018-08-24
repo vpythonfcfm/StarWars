@@ -57,7 +57,7 @@ class objeto():
 
 
     def rotar_y(self, theta, v):
-        matrizRot = np.array([[1, 0, 0], [0, np.cos(theta), -np.sin(theta)], [0, np.sin(theta), np.cos(theta)]])
+        matrizRot = np.array([[np.cos(theta), 0, np.sin(theta)], [0, 1, 0], [-np.sin(theta), 0, np.cos(theta)]])
         for triangulo in self.tris:
             triangulo.v0.pos=self.multiplicar_matriz_vec(matrizRot,triangulo.v0.pos-v)+v
             triangulo.v1.pos=self.multiplicar_matriz_vec(matrizRot,triangulo.v1.pos-v)+v
